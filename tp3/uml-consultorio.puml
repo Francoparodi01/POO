@@ -1,0 +1,116 @@
+@startuml
+title UML - Consultorio Odontológico
+
+'Clase abstracta de persona'
+abstract class Persona {
+  - id: Long
+  - dni: String
+  - nombre: String
+  - apellido: String
+  - telefono: String
+  + getNombreCompleto(): String
+}
+
+class Paciente extends Persona {
+  - numeroAfiliado: String
+  - obraSocial: ObraSocial
+  - historiaClinica: HistoriaClinica
+  + solicitarTurno(odontologo: Odontologo, fechaHora: Date): Turno
+}
+
+class Odontologo extends Persona {
+  - matricula: String
+  - especialidad: String
+  + asignarTratamiento(t: Tratamiento, turno: Turno): void
+}
+
+abstract class Tratamiento {
+  - codigo: String
+  - descripcion: String
+  - precioBase: double
+  + calcularCosto(): double
+}
+
+class LimpiezaDental extends Tratamiento {
+  - usaFluor: boolean
+  + calcularCosto(): double
+}
+
+class Endodoncia extends Tratamiento {
+  - cantidadSesiones: int
+  + calcularCosto(): double
+}
+
+class ObraSocial {
+  - nombre: String
+  - porcentajeCobertura: double
+  + calcularCobertura(monto: double): double
+}
+
+class HistoriaClinica {
+  - entradas: List<EntradaHC>
+  + agregarEntrada(e: EntradaHC): void
+  + getEntradas(): List<EntradaHC>
+}
+
+class EntradaHC {
+  - fecha: Date
+  - texto: String
+}
+
+class EstadoTurno <<enumeration>> {
+  PENDIENTE
+  CONFIRMADO
+  ATENDIDO
+  CANCELADO
+}
+
+class Turno {
+  - paciente: Paciente
+  - odontologo: Odontologo
+  - fechaHora: Date
+  - estado: EstadoTurno
+  - tratamiento: Tratamiento
+}
+
+interface Facturable {
+  + total(): double
+}
+
+class Factura implements Facturable {
+  - tratamiento: Tratamiento
+  - obraSocial: ObraSocial
+  + total(): double
+}
+
+abstract class Pago {
+  - monto: double
+  + procesarPago(): String
+}
+
+class PagoEfectivo extends Pago {
+  + procesarPago(): String
+}
+
+class PagoTarjeta extends Pago {
+  - numeroTarjeta: String
+  + procesarPago(): String
+}
+
+'Relaciones'
+
+Paciente "1" --> "1" HistoriaClinica
+HistoriaClinica "1" --> "0..*" EntradaHC
+Turno "1" --> "1" Paciente
+Turno "1" --> "1" Odontologo
+Turno "0..1" --> "1" Tratamiento
+Turno --> EstadoTurno
+Factura "1" --> "1" Tratamiento
+Factura "0..1" --> "1" ObraSocial
+Tratamiento <|-- LimpiezaDental
+Tratamiento <|-- Endodoncia
+Persona <|-- Paciente
+Persona <|-- Odontologo
+Pago <|-- PagoEfectivo
+Pago <|-- PagoTarjeta
+@enduml
