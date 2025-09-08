@@ -1,16 +1,19 @@
-# APUNTES CLASE 1 
+# TP3 - Consultorio Odontológico
 
-Paradigma: Modelado o serie de instrucciones que establece una norma o forma de hacer algo 
+## Integrantes
+- **Franco Parodi**
+- **Nahuel Kapusta**
 
-Clases => Define la forma de la estructura. Un plano que muestra cómo contruir algo 
+---
 
-Atributos => Los tipos de clasificación que puede tener una clase
+## Trabajo práctico
+Este proyecto implementa un modelo de **Consultorio Odontológico** en Java, a partir de un diagrama UML.  
+Se aplican los conceptos de **abstracción, herencia, polimorfismo, sobrecarga y cardinalidad**.
 
-Misma clase, diferente objeto. Quiere decir que el molde puede ser el mismo, pero varía en su forma
+--
 
-Objetos
+## Organización
 
-Métodos
-
-Modelado de conceptos de manera intuitiva y estructurada. 
-
+El repositorio se organiza en **ramas por entrega**, lo que permite separar cada trabajo práctico y mejorar la presentación.  
+Además, incluye una sección destinada a **apuntes de clase** que sirve de apoyo durante el cursado.  
+En caso de tratarse de una entrega, la rama queda dedicada únicamente al desarrollo del TP correspondiente.
