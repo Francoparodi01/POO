@@ -1,4 +1,4 @@
-# TP3 - Consultorio Odontológico
+# Programación Orientada a Objetos - Trabajos Prácticos
 
 ## Integrantes
 - **Franco Parodi**
@@ -6,14 +6,14 @@
 
 ---
 
-## Trabajo práctico
-Este proyecto implementa un modelo de **Consultorio Odontológico** en Java, a partir de un diagrama UML.  
-Se aplican los conceptos de **abstracción, herencia, polimorfismo, sobrecarga y cardinalidad**.
+## Descripción
+Repositorio general para la materia **Programación Orientada a Objetos (UADE)**.  
+Incluye tanto los **trabajos prácticos (TPs)** como **apuntes de clase**.  
 
---
+---
 
 ## Organización
+- El repositorio se organiza en **ramas por cada entrega**.  
+- De esta forma, cada TP queda modularizado y separado, facilitando la presentación.  
+- Además, se incluye material y apuntes de clase en ramas o carpetas específicas.  
 
-El repositorio se organiza en **ramas por entrega**, lo que permite separar cada trabajo práctico y mejorar la presentación.  
-Además, incluye una sección destinada a **apuntes de clase** que sirve de apoyo durante el cursado.  
-En caso de tratarse de una entrega, la rama queda dedicada únicamente al desarrollo del TP correspondiente.
