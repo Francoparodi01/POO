@@ -1,0 +1,10 @@
+@"
+.idea/
+out/
+clase_4/
+*.iml
+*.class
+target/
+bin/
+build/
+"@ | Set-Content .gitignore
